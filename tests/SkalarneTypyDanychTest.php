@@ -38,6 +38,11 @@ class SkalarneTypyDanychTest extends \PHPUnit_Framework_TestCase
             $this->razemToInt(25.5, 25.4)
         );
 
+        $this->assertEquals(
+            25,
+            $this->razemFromInt(20.99, 5.99)
+        );
+
     }
 
 
@@ -59,6 +64,16 @@ class SkalarneTypyDanychTest extends \PHPUnit_Framework_TestCase
     function razemToInt(float $cena, float $wysylka = 5.25): int
     {
         return $this->razem($cena, $wysylka);
+    }
+
+    /**
+     * @param int $cena
+     * @param int $wysylka
+     * @return float
+     */
+    function razemFromInt(int $cena, int $wysylka = 5): float
+    {
+        return $cena + $wysylka;
     }
 
 
