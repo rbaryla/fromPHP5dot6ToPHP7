@@ -40,5 +40,18 @@ class OperatorKoalescencyjnyTest extends \PHPUnit_Framework_TestCase
             $_GET['user'] ?? $_POST['user'] ?? 'gosc'
         );
 
+        $this->assertEquals('Ewa',
+            $_GET['user'] ?: 'gosc'
+        );
+
+        unset($_GET['user']);
+
+        try {
+            $user = $_GET['user'] ?: 'gosc';
+            $this->assertTrue(false);
+        } catch (\Throwable $err) {
+            $this->assertInstanceOf('Throwable', $err);
+        }
+
     }
 }
