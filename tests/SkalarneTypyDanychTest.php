@@ -25,6 +25,11 @@ class SkalarneTypyDanychTest extends \PHPUnit_Framework_TestCase
             $this->razem(50.25)
         );
 
+        $this->assertEquals(
+            55.5,
+            $this->razem(50.25)
+        );
+
         try {
             $this->razem(50.25, null);
             $this->assertTrue(false);
