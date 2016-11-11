@@ -11,7 +11,8 @@ namespace rbaryla;
 
 class OperatorKoalescencyjnyTest extends \PHPUnit_Framework_TestCase
 {
-    public function testOperatorKoalescencyjny() {
+    public function testOperatorKoalescencyjny()
+    {
         $this->assertEquals(
             'gosc',
             $_GET['user'] ?? $_POST['user'] ?? 'gosc'
